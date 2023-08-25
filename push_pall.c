@@ -47,9 +47,23 @@ printf("%d\n", current->n);
 current = current->next;
 }
 }
+/**
+ * main - code interpreter
+ * @argc: the number of arguments
+ * @argv: the location
+ *
+ * Return: 0 on success
+ */
 
 int main(int argc, char *argv[])
 {
+char *content;
+FILE *file;
+size_t size = 0;
+ssize_t read_line = 1;
+stack_t *stack = NULL;
+unsigned int count = 0;
+  
 if (strcmp(instruction_t.opcode, "push") == 0)
 {
 push(&stack, line_number);
