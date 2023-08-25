@@ -9,9 +9,7 @@
  * Return: no return
  */
 
-stack_t *stack = NULL;
-
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **head, unsigned int count)
 {
 int k, l;
   
@@ -22,9 +20,9 @@ dprintf(2, "usage: push integer\n");
 free_instruction_t();
 exit(EXIT_FAILURE);
 }
-for (l=0; instruction_t.argsl] != '\0'; l++)
+for (l = 0; instruction_t.args[l] != '\0'; l++)
 {
-if (!isdigit(instruction_t.argsl] && instruction_t.args[l] != '-)
+if (!isdigit(instruction_t.args[l] && instruction_t.args[l] != '-')
 {
 dprintf(2, "L%u: ", count);
 dprintf(2, "usage: push integer\n");
@@ -32,11 +30,11 @@ free_instruction_t();
 exit(EXIT_FAILURE);
 }
 }
-n = atoi(instruction_t.args);
+k = atoi(instruction_t.args);
 if (instruction_t.lifo == 1)
-add_dnodeint(head, n);
+add_dnodeint(head, k);
 else
-add_dnodeint(head, n);
+add_dnodeint(head, k);
 }
 
 /**
@@ -46,7 +44,7 @@ add_dnodeint(head, n);
  * Return: no return
  */
 
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **head, unsigned int count)
 {
 stack_t *current;
 (void) count;
@@ -65,7 +63,8 @@ current = current->next;
  * @count: the line number
  * Return: no return
  */
-void pint(stack_t **stack, unsigned int count)
+
+void pint(stack_t **head, unsigned int count)
 {
 (void)count;
 
@@ -76,7 +75,7 @@ dprintf(2, "can't pint, stack empty\n");
 free_instruction_t();
 exit(EXIT_FAILURE);
 }
-printf("%d\n", (*head)->n);
+printf("%d\n", (*head)->k);
 }
 
 /**
@@ -85,7 +84,7 @@ printf("%d\n", (*head)->n);
  * @count: the line number
  * Return: no return
  */
-void _pop(stack_t **stack, unsigned int count)
+void _pop(stack_t **head, unsigned int count)
 {
 stack_t *current;
 
@@ -112,7 +111,7 @@ int j = 0;
 stack_t *current = NULL;
 current = *head;
 
-for (; current != NULL; current = current->next, m++)
+for (; current != NULL; current = current->next, j++)
 ;
 
 if (j < 2)
