@@ -46,7 +46,7 @@ add_dnodeint(head, n);
  * Return: no return
  */
 
-void pall(stack_t **stack, unsigned int count)
+void pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *current;
 (void) count;
@@ -65,7 +65,7 @@ current = current->next;
  * @count: the line number
  * Return: no return
  */
-void _pint(stack_t **stack, unsigned int count)
+void pint(stack_t **stack, unsigned int count)
 {
 (void)count;
 
