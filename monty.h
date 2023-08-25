@@ -12,12 +12,12 @@
 extern char **op_toks;
 typedef struct globals
 {
-	int lifo;
-	unsigned int cont;
-	char  *arg;
-	stack_t *head;
-	FILE *fd;
-	char *buffer;
+int lifo;
+unsigned int cont;
+char  *arg;
+stack_t *head;
+FILE *fd;
+char *buffer;
 } global_t;
 
 /**
@@ -52,21 +52,21 @@ typedef struct instruction_s
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-void _pint(stack_t **doubly, unsigned int cline);
-void _pop(stack_t **doubly, unsigned int cline);
-void _swap(stack_t **doubly, unsigned int cline);
-void _queue(stack_t **doubly, unsigned int cline);
-void _stack(stack_t **doubly, unsigned int cline);
-void _add(stack_t **doubly, unsigned int cline);
-void _nop(stack_t **doubly, unsigned int cline);
-void _sub(stack_t **doubly, unsigned int cline);
-void _div(stack_t **doubly, unsigned int cline);
-void _mul(stack_t **doubly, unsigned int cline);
-void _mod(stack_t **doubly, unsigned int cline);
-void _pchar(stack_t **doubly, unsigned int cline);
-void _pstr(stack_t **doubly, unsigned int cline);
-void _rotl(stack_t **doubly, unsigned int cline);
-void _rotr(stack_t **doubly, unsigned int cline);
+void pint(stack_t **head, unsigned int oount);
+void _pop(stack_t **head, unsigned int oount);
+void _swap(stack_t **head, unsigned int oount);
+void _queue(stack_t **head, unsigned int oount);
+void _stack(stack_t **head, unsigned int oount);
+void _add(stack_t **head, unsigned int oount);
+void _nop(stack_t **head, unsigned int oount);
+void _sub(stack_t **head, unsigned int oount);
+void _div(stack_t **head, unsigned int oount);
+void _mul(stack_t **head, unsigned int oount);
+void _mod(stack_t **head, unsigned int oount);
+void putchar(stack_t **head, unsigned int oount);
+void _pstr(stack_t **head, unsigned int oount);
+void _rotl(stack_t **head, unsigned int oount);
+void _rotr(stack_t **head, unsigned int oount);
 
 /*get function*/
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
