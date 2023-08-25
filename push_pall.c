@@ -38,3 +38,23 @@ add_dnodeint(head, n);
 else
 add_dnodeint(head, n);
 }
+
+/**
+ * pall - prints all the values on the stack,
+ * starting from the top of the stack.
+ * @head: the stack head
+ * @count: the line number
+ */
+
+void pall(stack_t **head, unsigned int count)
+{
+stack_t *current;
+(void) count;
+current = *head;
+
+while (current)
+{
+printf("%d\n", current->n);
+current = current->next;
+}
+}
