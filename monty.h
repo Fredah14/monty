@@ -14,7 +14,7 @@ typedef struct globals
 {
 int lifo;
 unsigned int cont;
-char  *arg;
+char *arg;
 stack_t *head;
 FILE *fd;
 char *buffer;
@@ -50,8 +50,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void _push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
+void _push(stack_t **head, unsigned int count);
+void pall(stack_t **head, unsigned int count);
 void pint(stack_t **head, unsigned int oount);
 void _pop(stack_t **head, unsigned int oount);
 void _swap(stack_t **head, unsigned int oount);
@@ -63,7 +63,7 @@ void _sub(stack_t **head, unsigned int oount);
 void _div(stack_t **head, unsigned int oount);
 void _mul(stack_t **head, unsigned int oount);
 void _mod(stack_t **head, unsigned int oount);
-void putchar(stack_t **head, unsigned int oount);
+void pchar(stack_t **head, unsigned int oount);
 void _pstr(stack_t **head, unsigned int oount);
 void _rotl(stack_t **head, unsigned int oount);
 void _rotr(stack_t **head, unsigned int oount);
