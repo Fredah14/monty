@@ -3,128 +3,38 @@
 #include <stdlib.h>
 
 /**
- * push - adds a node to the stack
- * @head: the stack head
- * @count: the line number
+ * push - pushes an element to the stack.
+ * @head: the stack head.
+ * @count: the line number.
  * Return: no return
  */
 
 void push(stack_t **head, unsigned int count)
 {
-int k, l;
+  int n, l = 0, flags = 0;
   
-if (!instruction_t.args)
+if (!instruction_t.arg)
 {
-dprintf(2, "L%u: ", count);
-dprintf(2, "usage: push integer\n");
-free_instruction_t();
+if (instruction_t.arg[0] == '-')
+l++;
+for (; instruction_t.arg[l] != '\0'; l++)
+{
+if (instruction_t.arg[l] > 57 || instruction_t.arg[l] < 48)
+flags = 1
+}
+if (flags == 1)
+{
+fprintf(stderr, "L%u: usage: push integer\n", count);
+fclose(instruction_t.file);
+free(instruction_t.conten)
+free stack(head);
 exit(EXIT_FAILURE);
 }
-for (l = 0; instruction_t.args[l] != '\0'; l++)
-{
-if (!isdigit(instruction_t.args[l] && instruction_t.args[l] != '-')
-{
-dprintf(2, "L%u: ", count);
-dprintf(2, "usage: push integer\n");
-free_instruction_t();
-exit(EXIT_FAILURE);
 }
-}
-k = atoi(instruction_t.args);
-if (instruction_t.lifo == 1)
-add_dnodeint(head, k);
+ele
+n = atoi(instruction_t.arg);
+if (instruction_t.lifo == 0)
+add_dnodeint(head, n);
 else
-add_dnodeint(head, k);
-}
-
-/**
- * pall - prints values on the stack
- * @head: the stack head
- * @count: the line number
- * Return: no return
- */
-
-void pall(stack_t **head, unsigned int count)
-{
-stack_t *current;
-(void) count;
-current = *head;
- 
-while (current)
-{
-printf("%d\n", current->n);
-current = current->next;
-}
-}
-
-/**
- * _pint - prints the value at the top of the stack
- * @head: the stack head
- * @count: the line number
- * Return: no return
- */
-
-void pint(stack_t **head, unsigned int count)
-{
-(void)count;
-
-if (*head == NULL)
-{
-dprintf(2, "L%u: ", count);
-dprintf(2, "can't pint, stack empty\n");
-free_instruction_t();
-exit(EXIT_FAILURE);
-}
-printf("%d\n", (*head)->k);
-}
-
-/**
- * _pop - removes top node of the stack
- * @head: the stack head
- * @count: the line number
- * Return: no return
- */
-void _pop(stack_t **head, unsigned int count)
-{
-stack_t *current;
-
-if (head == NULL || *head == NULL)
-{
-dprintf(2, "L%u: can't pop an empty stack\n", count);
-free_instruction_t();
-exit(EXIT_FAILURE);
-}
-current = *head;
-*head = (*head)->next;
-free(current);
-}
-
-/**
- * _swap - swaps the top two nodess of the stack
- * @head: the stack head
- * @count: the line number
- * Return: no return
- */
-void _swap(stack_t **head, unsigned int count)
-{
-int j = 0;
-stack_t *current = NULL;
-current = *head;
-
-for (; current != NULL; current = current->next, j++)
-;
-
-if (j < 2)
-{
-dprintf(2, "L%u: can't swap, stack too short\n", count);
-free_instruction_t();
-exit(EXIT_FAILURE);
-}
-
-current = *dhead;
-*head = (*head)->next;
-current->next = (*dhead)->next;
-current->prev = *head;
-(*head)->next = current;
-(*head)->prev = NULL;
+add_dnodeint(head, n);
 }
